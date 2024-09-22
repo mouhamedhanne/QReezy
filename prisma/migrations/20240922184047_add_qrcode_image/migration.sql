@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "QRCode" ALTER COLUMN "qrCodeImage" DROP DEFAULT;
