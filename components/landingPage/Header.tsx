@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { LoginButton } from "@/src/features/auth/LoginButton";
-import { LocaleSelect } from "@/app/[locale]/LocaleSelect";
 import { ArrowUpRight } from "lucide-react";
 
 export default function Header() {
