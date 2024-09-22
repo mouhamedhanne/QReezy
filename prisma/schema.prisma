@@ -61,23 +61,11 @@ model User {
   createdAt     DateTime        @default(now())
   updatedAt     DateTime        @updatedAt
   role          String?
-  isOnboarded   Boolean         @default(false)
   accounts      Account[]
-  sessions      Session[]
-  username  String?  
-  bio       String?
-  link      String?
-  images        Image[]  @relation("UserImages")
+  sessions      Session[] 
 }
 
-model Image {
-  id        String   @id @default(cuid())
-  url       String   @unique
-  userId    String
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade, name: "UserImages")
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
+
 
 
 

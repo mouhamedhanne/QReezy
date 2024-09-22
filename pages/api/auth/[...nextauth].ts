@@ -27,10 +27,6 @@ export const authOptions: AuthOptions = {
           emailVerified: null,
           createdAt: new Date(),
           updatedAt: new Date(),
-          username: profile.username ? profile.username : "",
-          bio: profile.bio ? profile.bio : "",
-          link: profile.link ? profile.link : "",
-          isOnboarded: false,
         };
       },
     }),
@@ -41,25 +37,13 @@ export const authOptions: AuthOptions = {
       if (session.user) {
         session.user.id = token.id as string;
         session.user.role = token.role as string;
-        session.user.isOnboarded = token.isOnboarded as boolean;
       }
       return session;
     },
-    async jwt({ token, user, account }) {
+    async jwt({ token, user }) {
       if (user) {
         token.id = user.id;
         token.role = user.role;
-        token.isOnboarded = user.isOnboarded;
-      }
-
-      if (!account) {
-        const dbUser = await prisma.user.findUnique({
-          where: { id: token.id as string },
-          select: { isOnboarded: true },
-        });
-        if (dbUser) {
-          token.isOnboarded = dbUser.isOnboarded;
-        }
       }
 
       return token;
