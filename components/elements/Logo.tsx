@@ -1,10 +1,10 @@
 import Image from "next/image";
-import GalsenextLogo from "@/public/galsenext.svg";
+import Qreezy from "@/public/Qreezy.svg";
 
 export const Logo = ({ width }: any) => {
   return (
     <div className="">
-      <Image src={GalsenextLogo} alt="Galsenext Logo" width={width} />
+      <Image src={Qreezy} alt="Qreezy Logo" width={width} />
     </div>
   );
 };

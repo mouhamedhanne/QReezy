@@ -17,7 +17,7 @@ export const Providers = ({ children }: PropsWithChildren) => {
           <Toaster />
           <ProgressBar
             height="3px"
-            color="#FF4F01"
+            color="#C6F7D7"
             options={{ showSpinner: false }}
             shallowRouting
           />
