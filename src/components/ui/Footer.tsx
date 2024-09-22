@@ -20,7 +20,7 @@ export const Footer = () => {
         </Link>
 
         <Link
-          href="/write"
+          href="/scanner"
           className={clsx(
             buttonVariants({
               variant: "ghost",
