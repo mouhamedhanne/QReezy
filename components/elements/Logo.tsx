@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Qreezy from "@/public/Qreezy.svg";
+import Qreezy from "@/public/qreezy.svg";
 
 export const Logo = ({ width }: any) => {
   return (
