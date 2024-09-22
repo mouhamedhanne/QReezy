@@ -10,13 +10,11 @@ declare module "next-auth" {
       /** The user's id address. */
       id?: string;
       role?: string;
-      isOnboarded: boolean;
     };
   }
 
   interface User extends PrismaUser {
     role: string;
-    isOnboarded: boolean;
   }
 }
 
