@@ -1,20 +1,14 @@
-import CallToAction from "@/components/landingPage/CallToAction";
-import Faq from "@/components/landingPage/FAQ";
-import Feature from "@/components/landingPage/Feature";
-import Footer from "@/components/landingPage/Footer";
-import Header from "@/components/landingPage/Header";
-import Herotop from "@/components/landingPage/Herotop";
-import Testimonial from "@/components/landingPage/Testimonial";
+import { Features } from "@/components/landingPage/Feature";
+import { Footer } from "@/components/landingPage/Footer";
+import { Herotop } from "@/components/landingPage/Herotop";
+import { Navbar } from "@/components/landingPage/Navbar";
 
 export default function PublicContent() {
   return (
-    <main className="bg-home_page ">
-      <Header />
+    <main className="">
+      <Navbar />
       <Herotop />
-      <Feature />
-      <Faq />
-      <Testimonial />
-      <CallToAction />
+      <Features />
       <Footer />
     </main>
   );

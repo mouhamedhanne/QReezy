@@ -1,65 +1,58 @@
-import { Logo } from "../elements/Logo";
+import { Heart, Github, Instagram, Linkedin } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
-export default function Footer() {
+export const Footer = () => {
   return (
-    <div className="bg-[#18181B]">
-      <div className="max-w-4xl flex-wrap w-full flex gap-4 m-auto px-4 pb-24">
-        <div className="w-full flex justify-between max-lg:flex-col">
-          <div className="flex flex-col gap-4">
-            <div className="space-y-1">
-              <Logo width="60" />
+    <footer>
+      <div className=" my-20 text-center">
+        <div className="flex items-center justify-center gap-3 mb-3">
+          <Link href="https://twitter.com/mouhamedhanne13">
+            <Linkedin size={16} />
+          </Link>
+          <Link href="https://www.instagram.com/rassoul_404">
+            <Instagram size={16} />
+          </Link>
+          <Link href="https://github.com/mouhamedhanne" target="_blank">
+            <Github size={16} />
+          </Link>
+        </div>
+        <div className="flex items-center justify-center mb-3">
+          <div className="flex w-fit items-center gap-2 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 px-3 py-2  font-bold transition-all hover:brightness-110">
+            <Image
+              className="size-12 rounded-full"
+              src="/qreezy.png"
+              alt="my face"
+              width={30}
+              height={20}
+            />
+            <div className="flex flex-col gap-0">
+              <p className="text-lg font-semibold">
+                Made by
+                <Link
+                  className="font-extrabold text-primary hover:underline"
+                  href="https://melvynx.com"
+                >
+                  Melvynx
+                </Link>
+              </p>
+              <Link
+                className="text-xs text-muted-foreground transition-colors hover:text-foreground hover:underline"
+                href="https://twitter.com/melvyn_me"
+              >
+                Follow me on Twitter
+              </Link>
             </div>
-            <p className="text-sm text-muted-foreground italic">
-              © 2024 Galsenext
-            </p>
-          </div>
-          <div className="flex flex-col items-start mt-4 lg:mt-0 lg:items-end gap-4">
-            <p className="text-lg text-white font-semibold">Legal</p>
-            <Link
-              href="/"
-              className="text-sm text-muted-foreground hover:underline"
-            >
-              Terms
-            </Link>
-            <Link
-              href="/"
-              className="text-sm text-muted-foreground hover:underline"
-            >
-              Privacy
-            </Link>
-          </div>
-
-          <div className="flex flex-col items-start mt-4 lg:mt-0 lg:items-end gap-4">
-            <p className="text-lg text-white font-semibold">Social</p>
-            <Link
-              href="/"
-              className="text-sm text-muted-foreground hover:underline"
-            >
-              LinkedIn
-            </Link>
-            <Link
-              href="https://www.linkedin.com/in/mouhamed-el-malick-hanne-99199a2a6/"
-              target="_blank"
-              className="text-sm text-muted-foreground hover:underline"
-            >
-              Twitter
-            </Link>
-            <Link
-              href=""
-              className="text-sm text-muted-foreground hover:underline"
-            >
-              Instagram
-            </Link>
-            <Link
-              href="/"
-              className="text-sm text-muted-foreground hover:underline"
-            >
-              Facebook
-            </Link>
           </div>
         </div>
+        <p className="text-base flex justify-center text-neutral-600">
+          Propulsé avec {"  "} <Heart className="text-red-500" />
+          <Link href="https://mouhamedhanne.vercel.app/">
+            {"  "}
+            <u>@mouhamedhanne</u>
+          </Link>
+        </p>
       </div>
-    </div>
+    </footer>
   );
-}
+};
