@@ -19,7 +19,8 @@ export const Herotop = () => {
             Générez
           </span>{" "}
           <u>Modifiez </u> <br />
-          et Gérer Vos QR Codes en <br /> Toute Simplicité
+          et Gérer Vos QR Codes <br className="block sm:hidden" /> en{" "}
+          <br className="hidden sm:block" /> Toute Simplicité
         </h1>
       </div>
 
