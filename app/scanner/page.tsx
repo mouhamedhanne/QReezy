@@ -1,4 +1,42 @@
-"use client";
+import Container from "@/components/elements/Container";
+import {
+  Layout,
+  LayoutContent,
+  LayoutHeader,
+  LayoutTitle,
+} from "@/src/components/Layout/Layout";
+import { Typography } from "@/src/components/ui/Typography";
+
+export default function page() {
+  return (
+    <Container>
+      <div className="container">
+        <Layout>
+          <LayoutHeader>
+            <LayoutTitle>Scan</LayoutTitle>
+          </LayoutHeader>
+          <LayoutContent>
+            <Typography>Pas Disponible</Typography>
+          </LayoutContent>
+        </Layout>
+      </div>
+    </Container>
+  );
+}
+
+{
+  /**
+    constraints={{
+                video: {
+                  facingMode: "environment"
+                }
+              }}
+   */
+}
+
+{
+  /**
+   * "use client";
 
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
@@ -97,13 +135,5 @@ export default function Page() {
     </Container>
   );
 }
-
-{
-  /**
-    constraints={{
-                video: {
-                  facingMode: "environment"
-                }
-              }}
    */
 }

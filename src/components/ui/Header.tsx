@@ -24,8 +24,8 @@ export const Header = async () => {
           className="mr-auto"
         />
         <div className="flex items-center space-x-2">
-          {session?.user ? <UserNav user={user} /> : null}
           <ThemeToggle />
+          {session?.user ? <UserNav user={user} /> : null}
         </div>
       </div>
     </header>

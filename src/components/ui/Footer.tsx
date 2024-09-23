@@ -1,6 +1,6 @@
 import { buttonVariants } from "@/components/ui/button";
 import clsx from "clsx";
-import { Home, PenSquare, User } from "lucide-react";
+import { QrCode, ScanQrCode, User } from "lucide-react";
 import Link from "next/link";
 
 export const Footer = () => {
@@ -16,7 +16,7 @@ export const Footer = () => {
             "flex-1"
           )}
         >
-          <Home size={16} />
+          <QrCode size={16} />
         </Link>
 
         <Link
@@ -28,7 +28,7 @@ export const Footer = () => {
             "flex-1"
           )}
         >
-          <PenSquare size={16} />
+          <ScanQrCode size={16} />
         </Link>
         <Link
           href="/profile"

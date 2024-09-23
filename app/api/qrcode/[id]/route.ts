@@ -25,19 +25,17 @@ export async function PUT(
     const { email, website, phone, address } = await request.json();
     const { id } = params;
 
-    // Générer le nouveau QR code
     const qrCodeData = JSON.stringify({ email, website, phone, address });
     const qrCodeImage = await QRCode.toDataURL(qrCodeData);
 
-    // Mettre à jour l'enregistrement dans la base de données
     const updatedQRCode = await prisma.qRCode.update({
-      where: { id, userId }, // Assurez-vous que l'utilisateur est propriétaire du QR code
+      where: { id, userId },
       data: {
         email,
         website,
         phone,
         address,
-        qrCodeImage, // Mettre à jour l'image du QR code
+        qrCodeImage,
       },
     });
 

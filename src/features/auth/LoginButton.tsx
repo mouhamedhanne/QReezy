@@ -13,7 +13,8 @@ export const LoginButton = () => {
 
   return (
     <Button
-      className="gap-2 bg-home_secondary hover:bg-home_secondary/90 text-white hover:text-white"
+      className="gap-2 bg-black text-white transition duration-300
+      ease-in-out transform hover:bg-black/90 hover:text-white"
       variant="outline"
       size="sm"
       disabled={mutation.isPending}
@@ -26,7 +27,7 @@ export const LoginButton = () => {
       ) : (
         <LogIn size={12} className="text-white" />
       )}
-      Demo
+      Login
     </Button>
   );
 };

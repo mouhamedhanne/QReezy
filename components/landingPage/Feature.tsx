@@ -14,11 +14,13 @@ export const Features = () => {
               className="text-2xl font-semibold leading-none
                     tracking-tight"
             >
-              1. Accès Direct
+              1. Création Facile de QR Codes
             </h3>
             <p className="text-sm text-gray-400">
-              Plongez directement dans le monde de la traduction sans limites !
-              Explorez plus de 59 langues sans passer par l'inscription.
+              Générez vos QR codes en quelques clics ! QReezy facilite la
+              création de QR codes personnalisés adaptés à vos besoins, que ce
+              soit pour partager des liens, des contacts, ou d'autres
+              informations.
             </p>
           </div>
         </div>
@@ -32,12 +34,12 @@ export const Features = () => {
               className="text-2xl font-semibold leading-none
                     tracking-tight"
             >
-              2. Saisie du Texte à Traduire
+              2. Modification en Un Clic
             </h3>
             <p className="text-sm text-gray-400">
-              Étape cruciale ! Entrez votre texte à traduire et sélectionnez la
-              langue de destination. Transformez vos mots dans la langue de
-              votre choix en quelques clics.
+              Besoin de mettre à jour vos informations ? Pas de souci ! Modifiez
+              facilement votre QR code existant, et les changements seront
+              instantanément appliqués sans avoir à générer un nouveau code.
             </p>
           </div>
         </div>
@@ -51,12 +53,13 @@ export const Features = () => {
               className="text-2xl font-semibold leading-none
                     tracking-tight"
             >
-              3. Ajout d'un Fichier PDF
+              3. Connexion et Sauvegarde
             </h3>
             <p className="text-sm text-gray-400">
-              Explorez une nouvelle dimension de la traduction avec notre
-              fonction d'importation de fichiers PDF. Cliquez sur 'Choisir un
-              Fichier' pour traduire instantanément vos documents.
+              Connectez-vous à votre compte QReezy pour retrouver tous vos QR
+              codes sauvegardés. Vos données sont automatiquement enregistrées,
+              vous permettant de modifier ou télécharger vos codes à tout
+              moment.
             </p>
           </div>
         </div>
@@ -70,12 +73,11 @@ export const Features = () => {
               className="text-2xl font-semibold leading-none
                     tracking-tight"
             >
-              4. Téléchargement du Fichier PDF Traduit
+              4. Fonctionnalité de Scan
             </h3>
             <p className="text-sm text-gray-400">
-              Mission accomplie ! Téléchargez votre fichier PDF traduit en un
-              clin d'œil. Prêt à partager vos idées à travers les langues ?
-              C'est simple et efficace.
+              Bientôt sur QReezy : une fonctionnalité de scan qui vous permettra
+              de lire les QR codes directement depuis l'application.
             </p>
           </div>
         </div>
