@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Logo } from "../elements/Logo";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { Github } from "lucide-react";
 
 export const Navbar = () => {
