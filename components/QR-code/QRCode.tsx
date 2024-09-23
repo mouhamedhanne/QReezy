@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
-import { QrCode } from "lucide-react";
+import { QrCode, Loader } from "lucide-react";
 
 interface QRCodeData {
   id: string;
@@ -23,6 +23,7 @@ export default function QRCode() {
   const [qrCodeImage, setQrCodeImage] = useState("");
   const [qrCodes, setQrCodes] = useState<QRCodeData[]>([]);
   const [currentQRCode, setCurrentQRCode] = useState<QRCodeData | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     fetchQRCodes();
@@ -50,6 +51,7 @@ export default function QRCode() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
     try {
       const response = await fetch("/api/qrcode", {
         method: "POST",
@@ -70,12 +72,14 @@ export default function QRCode() {
       }
     } catch (error) {
       console.error("Erreur lors de la génération du QR code:", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   const handleUpdate = async () => {
     if (!currentQRCode) return;
-
+    setIsLoading(true);
     try {
       const response = await fetch(`/api/qrcode/${currentQRCode.id}`, {
         method: "PUT",
@@ -100,6 +104,8 @@ export default function QRCode() {
       }
     } catch (error) {
       console.error("Erreur lors de la mise à jour du QR code:", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -109,12 +115,14 @@ export default function QRCode() {
         <CardContent className="p-6">
           <div className="bg-white rounded-lg p-4 mb-4">
             <div className="w-full aspect-square bg-green-500 rounded-lg flex items-center justify-center">
-              {qrCodeImage ? (
+              {qrCodeImage && !isLoading ? (
                 <img
                   src={qrCodeImage}
                   alt="QR Code"
                   className="w-full h-full object-contain"
                 />
+              ) : isLoading ? (
+                <Loader className="w-1/3 h-1/3 text-white animate-spin" /> // Loader
               ) : (
                 <QrCode className="w-1/3 h-1/3 text-white" />
               )}
@@ -155,16 +163,18 @@ export default function QRCode() {
               <Button
                 type="button"
                 onClick={handleUpdate}
+                disabled={isLoading}
                 className="w-full bg-blue-500 hover:bg-blue-600 text-white"
               >
-                Mettre à jour le QR Code
+                {isLoading ? "Mise à jour..." : "Mettre à jour le QR Code"}
               </Button>
             ) : (
               <Button
                 type="submit"
+                disabled={isLoading}
                 className="w-full bg-blue-500 hover:bg-blue-600 text-white"
               >
-                Générer le QR Code
+                {isLoading ? "Génération..." : "Générer le QR Code"}
               </Button>
             )}
           </form>
